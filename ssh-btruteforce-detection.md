@@ -64,10 +64,22 @@ Apply the changes by restarting the manager:
 ```
 sudo systemctl restart wazuh-manager
 ```
-## Verification
+Verification
 
 ## Step 4: Simulate Attack
 Perform SSH brute force from Kali Linux:
 ```
 hydra -t 4 -l <username> -P passwords.txt ssh://<target_ip>
 ```
+### Step 5: Check Blocking
+
+- After multiple failed attempts, Wazuh triggers active response  
+- Attacker IP is automatically blocked  
+- Connection attempts start failing 
+
+![SSH Blocking alert](screenshots/ssh/log.png)
+![SSH Blocking Result](screenshots/ssh/blocking.png)
+
+## Conclusion
+
+This use case demonstrates how Wazuh detects SSH brute force attacks using built-in rules and automatically blocks malicious IP addresses using active response. By correlating authentication failures and enforcing firewall rules, unauthorized access attempts are effectively mitigated, showcasing real-world SOC detection and response capabilities.
