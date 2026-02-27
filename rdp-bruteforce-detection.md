@@ -19,13 +19,12 @@ RDP brute force attacks are commonly used by attackers to gain initial access to
 
 ---
 
-## Step 1: Log Monitoring Configuration
+## Step 1: Environment Verification
 
-- Wazuh agent installed on Windows  
-- Security logs collected using Event Channel  
+- Wazuh manager and agent are successfully connected
+- Windows agent is actively sending logs to Wazuh
+- All endpoints are visible in the dashboard
 
-```xml
-<localfile>
-  <location>Security</location>
-  <log_format>eventchannel</log_format>
-</localfile>
+![Wazuh Dashboard](screenshots/rdp/dashboard.png)
+
+
