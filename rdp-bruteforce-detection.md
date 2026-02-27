@@ -25,6 +25,6 @@ RDP brute force attacks are commonly used by attackers to gain initial access to
 - Windows agent is actively sending logs to Wazuh
 - All endpoints are visible in the dashboard
 
-![Wazuh Dashboard](../screenshots/rdp/dashboard.png)
+![Wazuh Dashboard](screenshots/rdp/dashboard.png)
 
 
