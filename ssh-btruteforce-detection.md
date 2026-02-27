@@ -77,8 +77,8 @@ hydra -t 4 -l <username> -P passwords.txt ssh://<target_ip>
 - Attacker IP is automatically blocked  
 - Connection attempts start failing 
 
-![SSH Blocking alert](screenshots/ssh/log.png)
-![SSH Blocking Result](screenshots/ssh/blocking.png)
+![SSH Blocking alert](screenshots/ssh/blocking.png)
+![SSH Blocking Result](screenshots/ssh/log.png)
 
 ## Conclusion
 
