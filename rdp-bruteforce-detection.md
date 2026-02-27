@@ -27,4 +27,15 @@ RDP brute force attacks are commonly used by attackers to gain initial access to
 
 ![Wazuh Dashboard](screenshots/rdp/dashboard.png)
 
+## Step 2: Attack Simulation (Kali Linux)
+
+- Performed RDP brute force attack using Hydra
+- Targeted Windows machine on port 3389
+- Used multiple username/password combinations
+
+**Command used:**
+
+```bash
+hydra -l testuser -P passwordlist.txt rdp://<WINDOWS_IP> -t 1 -W 3 -V
+
 
