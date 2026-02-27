@@ -63,7 +63,7 @@ A custom rule is created to detect RDP brute force activity based on multiple fa
 ```xml
 <group name="rdp, brute_force">
 
-  <rule id="100300" level="10" frequency="3" timeframe="120">
+  <rule id="100002" level="10" frequency="3" timeframe="120">
     <if_matched_sid>60122</if_matched_sid>
     <description>RDP Brute Force Attack Detected</description>
   </rule>
@@ -86,7 +86,7 @@ Active response is configured to block the attacker IP using Windows Firewall.
 <active-response>
   <command>netsh</command>
   <location>local</location>
-  <rules_id>100300</rules_id>
+  <rules_id>100002</rules_id>
   <timeout>60</timeout>
 </active-response>
 ```
@@ -130,5 +130,28 @@ hydra -l testuser -P passwordlist.txt rdp://<WINDOWS_IP> -t 1 -W 3 -V
 
 ![Active Response Alert](screenshots/rdp/alert-blocked.png)  ![Log Details](screenshots/rdp/log1.png)
 
+### Key Indicators:
+
+- Alert: **Active response: active-response/bin/netsh.exe - add**  
+- Rule ID: **100002**  
 - Source IP is automatically blocked  
+- Repeated connection attempts are stopped
+
+  ---
+
+## Step 7: Firewall Verification (Endpoint Level)
+
+To confirm that the attacker's IP was successfully blocked, the firewall rules on the Windows machine were checked.
+
+**Command used:**
+
+```cmd
+netsh advfirewall firewall show rule name=all verbose
+```
+![Active Response verified](screenshots/rdp/ip-blocked.png)
+
+---
+## Conclusion
+
+Wazuh successfully detected RDP brute force activity and automatically blocked the attacker using active response. This demonstrates real-time threat detection and automated response in a SOC environment.
 
