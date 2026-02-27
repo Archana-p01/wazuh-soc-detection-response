@@ -1,4 +1,4 @@
-## UC1 – RDP Brute Force Detection and Blocking (Windows Endpoint)
+## RDP Brute Force Detection and Blocking
 
 ### Objective
 Detect and respond to RDP brute force attacks targeting a Windows system by monitoring repeated failed login attempts using Wazuh SIEM. This use case demonstrates how SOC teams identify credential access attempts and prevent unauthorized access.
