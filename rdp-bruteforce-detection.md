@@ -37,5 +37,17 @@ RDP brute force attacks are commonly used by attackers to gain initial access to
 
 ```bash
 hydra -l testuser -P passwordlist.txt rdp://<WINDOWS_IP> -t 1 -W 3 -V
+---
+## Step 3: Detection in Wazuh
 
+- Multiple failed login attempts detected from attacker machine
+- Wazuh rule triggered: **60122**
+- Alert generated: **Logon Failure - Unknown user or bad password**
+- Repeated events indicate brute force activity
+
+---
+
+### Evidence
+
+![Wazuh Failed Login Alerts](screenshots/rdp/failed-logins.png)
 
